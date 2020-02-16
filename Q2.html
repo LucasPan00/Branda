@@ -9,25 +9,67 @@
         <div class="topright">FruitBasket</div>
         </div>
         <p class="introText">Welcome to FruitBasket!</p>   
-        <form>
-            <p>First Name:
-            <input type="text" name="first name" placeholder= "Your First Name"
-            size="15" maxlength="30" />
-            Last Name:
-            <input class="input"type="text" name="last name" placeholder= "Your Last Name"
-            size="15" maxlength="30" />
-            <button type="button"name="submit"value="Submit"onclick="display()">Show Available Fruit</button>
-            <div id="fruits" class="hidden">Apple<img src="images/apple.jpg" hspace="40"alt="apple"class="fruitimage">
-                <br>Orange<img src="images/orange.jpg" hspace="40" alt="orange"class="fruitimage"></div>
+        <p>First Name:
+        <input type="text" id="first name" placeholder= "Your First Name"
+        size="15" maxlength="30" />
+        Last Name:
+        <input type="text" id="last name" placeholder= "Your Last Name"
+        size="15" maxlength="30" />
+        <button type="button"name="submit"value="Submit"onclick="display()">Show Available Fruit</button>
+            <form id="fruitForm" class="hidden"> 
+            <p id="fruits"></p>
+                <div id="div1" name="apple" val="0" onclick="selected(1)">Apple<img src="images/apple.jpg" hspace="40"alt="apple"class="fruitimage"></div>
+                <div id="div2" name="orange" val="0" onclick="selected(2)">Orange<img src="images/orange.jpg" hspace="40" alt="orange"class="fruitimage"></div> 
+            </p>
             <script type="text/javascript">
             function display(){
-                var x = document.getElementById("fruits");
-                if (x) {
-                    x.className=(x.className=='hidden')?'unhidden':'hidden';
-                    }
+                document.getElementById("fruitForm").style.display="block";
+            }
+            function selected(i) {
+                $("#div"+i).attr("style", "border-style: solid");
+                $("#div"+i).attr("val",1);
             }
             </script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
             </p>
-            </form>    
+            <button type="button"name="order"onclick="submitfunction()">Order!</button>
+            <script>
+                function submitfunction(){
+                    if(document.getElementById("first name").value.length==0
+                    ||document.getElementById("last name").value.length==0){
+                        alert("Invalid Name Entry");
+                    }
+                    else{
+                        var total=0;
+                        var fruits=[];
+                        for(var i=1;i<=2;i++){
+                            if($("#div"+i).attr("val")==1){
+                                total+=1;
+                                fruits.push($("#div"+i).attr("name"))
+                                $("#div"+i).attr("style", "border-style: none");
+                            }
+                        }
+                        if(total==0){
+                            alert("Nothing Selected!");
+                        }
+                        else{
+                            var h = document.createElement("P2")                
+                            var t = document.createTextNode(
+                                document.getElementById("first name").value+" "+
+                                document.getElementById("last name").value+" ordered: "+
+                                fruits
+                            );  
+                            h.appendChild(t); 
+                            var br = document.createElement("br");
+                            h.appendChild(br);
+                            document.body.appendChild(h);
+                            document.getElementById("first name").value="";
+                            document.getElementById("last name").value="";
+                        }
+                    }
+
+                }
+            </script>
+            </form> 
     </body>
 </html>

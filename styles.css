@@ -13,7 +13,6 @@
   opacity: 0.3; 
 }
 .hidden { display: none; }
-.unhidden { display: block; } 
 .topright {
     position: absolute;
     top: 8px;
@@ -47,4 +46,13 @@ input[type=text] {
 }
 body {
   text-align: center;
+}
+p{
+  padding: 20px 20px
+}
+
+.p2{
+  font-size: 20;
+  color: rosybrown;
+  padding: 10px 10px
 }
