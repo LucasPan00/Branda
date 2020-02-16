@@ -29,6 +29,7 @@
   }
 
 .introText{
+    font-family: fantasy;
     font-size: 40;
     color: green
 }
@@ -55,4 +56,17 @@ p{
   font-size: 20;
   color: rosybrown;
   padding: 10px 10px
+}
+
+.sumbitorder {
+  font-family: serif;
+  display: block;
+  width: 20%;
+  border: plum;
+  background-color:pink;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
 }
