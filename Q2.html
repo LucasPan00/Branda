@@ -26,8 +26,13 @@
                 document.getElementById("fruitForm").style.display="block";
             }
             function selected(i) {
-                $("#div"+i).attr("style", "border-style: solid");
-                $("#div"+i).attr("val",1);
+                if($("#div"+i).attr("val")==1){
+                    $("#div"+i).attr("style", "border-style: none");
+                    $("#div"+i).attr("val",0);
+                }else{
+                    $("#div"+i).attr("style", "border-style: solid");
+                    $("#div"+i).attr("val",1);
+                }
             }
             </script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
