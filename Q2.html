@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>This is the title</title>
+    </head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <body class="back">
+        <div>
+            <img src="images/image2.png" alt="logo"class="topleft">
+        <div class="topright">FruitBasket</div>
+        </div>
+        <p class="introText">Welcome to FruitBasket!</p>   
+        <form>
+            <p>First Name:
+            <input type="text" name="first name" placeholder= "Your First Name"
+            size="15" maxlength="30" />
+            Last Name:
+            <input class="input"type="text" name="last name" placeholder= "Your Last Name"
+            size="15" maxlength="30" />
+            <button type="button"name="submit"value="Submit"onclick="display()">Show Available Fruit</button>
+            <div id="fruits" class="hidden">Apple<img src="images/apple.jpg" hspace="40"alt="apple"class="fruitimage">
+                <br>Orange<img src="images/orange.jpg" hspace="40" alt="orange"class="fruitimage"></div>
+            <script type="text/javascript">
+            function display(){
+                var x = document.getElementById("fruits");
+                if (x) {
+                    x.className=(x.className=='hidden')?'unhidden':'hidden';
+                    }
+            }
+            </script>
+            </p>
+            </form>    
+    </body>
+</html>
